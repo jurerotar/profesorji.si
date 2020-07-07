@@ -1,0 +1,49 @@
+@import "typography";
+
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --body-background-color: #18191A;
+    --sidebar-background-color: #18191A;
+    --topbar-background-color: #18191A;
+    --primary-color: #1877f2;
+    --secondary-color: ;
+    --font-title: 'Ubuntu', sans-serif;
+    --font-title: '', sans-serif;
+    --font-text: '';
+    --search-bar-height: 4rem;
+    --search-bar-width: 24rem;
+    --search-bar-background-color: '#3A3B3C';
+    --search-bar-color: '';
+
+
+    --border-radius-primary: 20px;
+    --border-radius-secondary: 50px;
+
+    --transition-duration-primary: 1s;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 1280px) {
+		font-size: 55%;
+	}
+	@media screen and (max-width: 800px) {
+		font-size: 50%;
+	}
+}
+
+body {
+    background-color: var(--body-background-color);
+}
+
+a {
+    text-decoration: none;
+}
