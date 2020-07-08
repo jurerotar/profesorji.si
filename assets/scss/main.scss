@@ -8,24 +8,28 @@
 }
 
 :root {
+    --small-mobile-width: 320px;
+    --mobile-width: 400px;
+    --tablet-width: 768px;
     --body-background-color: #18191A;
     --sidebar-background-color: #18191A;
-    --topbar-background-color: #18191A;
-    --primary-color: #1877f2;
+    --topbar-background-color: #242526;
+    --topbar-background-hover-color: #3A3B3C;
+    --primary-color: #2D88FF;
     --secondary-color: ;
-    --font-title: 'Ubuntu', sans-serif;
-    --font-title: '', sans-serif;
-    --font-text: '';
+
+    --font-title: 'Open sans', sans-serif;
+    --font-text: 'Open sans', sans-serif;
     --search-bar-height: 4rem;
     --search-bar-width: 24rem;
     --search-bar-background-color: '#3A3B3C';
     --search-bar-color: '';
 
 
-    --border-radius-primary: 20px;
+    --border-radius-primary: 10px;
     --border-radius-secondary: 50px;
 
-    --transition-duration-primary: 1s;
+    --transition-duration-primary: .3s;
 }
 
 html {
@@ -39,6 +43,16 @@ html {
 		font-size: 50%;
 	}
 }
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.71;
+    text-rendering: geometricPrecision;
+    font-family: var(--font-title);
+}
+p, a, a:link, a:visited, textarea, button, label, input, span, ::before, ::after {
+  line-height: 1.71;
+  text-rendering: geometricPrecision;
+  font-family: var(--font-text);
+}
 
 body {
     background-color: var(--body-background-color);
@@ -46,4 +60,8 @@ body {
 
 a {
     text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
 }
