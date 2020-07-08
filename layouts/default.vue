@@ -2,7 +2,7 @@
   <div>
     <Sidebar />
     <Topbar />
-    <LatestUpdates />
+    <RecommendedProfessors />
     <main>
       <Nuxt />
     </main>
@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
 
 </script>
 

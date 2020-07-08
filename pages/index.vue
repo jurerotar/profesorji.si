@@ -8,7 +8,7 @@ export default {}
 
 <style>
 /* Transitions using the page hook */
-page-enter-active, .page-leave-active {
+.page-enter-active, .page-leave-active {
     transition: all .30s ease-out;
 }
 .page-enter, .page-leave-active {

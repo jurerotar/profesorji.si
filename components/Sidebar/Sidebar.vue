@@ -30,6 +30,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 25vw;
+    overflow-y: auto;
     max-width: 320px;
     position: fixed;
     padding: 1rem 1rem 1rem 1rem;

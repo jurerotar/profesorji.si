@@ -16,8 +16,8 @@
         </li>
         <li class = "topbar__listItem">
             <nuxt-link to = "/vseckano" class="topbar__link" data-title = "Najbolj všečkano">
-                <svg class="topbar__logo" height="28" width="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path fill="currentColor" d="M272 480h-96c-13.3 0-24-10.7-24-24V256H48.2c-21.4 0-32.1-25.8-17-41L207 39c9.4-9.4 24.6-9.4 34 0l175.8 176c15.1 15.1 4.4 41-17 41H296v200c0 13.3-10.7 24-24 24z"></path>
+                <svg class="topbar__logo" height="28" width="28" sxmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
                 </svg>
             </nuxt-link>
         </li>
