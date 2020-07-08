@@ -1,24 +1,49 @@
 <template>
     <div class = "logoSearchContainer">
-        <Logo />
-        <Search />
+        <div class = "logoSearchContainer__searchAndTitleContainer">
+            <span v-if = "width < 768" class = "logoSearchContainer__title">Iskanje</span>
+            <Logo v-if = "width >= 768" />
+            <Search />
+        </div>
     </div>
 </template>
 
+<script>
+export default {
+    computed: {
+        width() {
+            return this.$store.state.width.wWidth;
+        }
+    }
+}
+</script>
 
 <style lang="scss">
 .logoSearchContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: blue;
-    &[data-position="onSide"] {
-        display: none;
+    display: flex;
+    position: absolute;
+    top: .5rem;
+    left: 2rem;
+    &__searchAndTitleContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        @media screen and (max-width: 768px) {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
-    @media only screen and (max-width: var(--tablet-width)) {
-    &[data-position="onTop"] {
-        display: none;
+    &__title {
+        font-weight: 600;
+        color: var(--sidebar-link-color);
+        font-size: 1.6rem;
     }
-    }
+    @media screen and (max-width: 768px) {
+		width: calc(100% - 2rem);
+        left: 1rem;
+	}
 }
 </style>

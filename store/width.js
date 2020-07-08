@@ -1,5 +1,5 @@
 export const state = () => ({
-    wWidth: 0
+    wWidth: 1001
 });
 
 

@@ -1,19 +1,17 @@
 <template>
     <nav class = "topbar">
-        <LogoSearch data-position = "onTop" />
-        <TopbarLinks />
-        <div class = "topbar__userPanel">
-            {{width}}
+        <div class = "topbar_rel">
+            <LogoSearch v-if = "width >= 768" />
+            <TopbarLinks />
+            <div class = "topbar__userPanel">
+            </div>
         </div>
-
     </nav>
 </template>
 
 
 <script>
-import {mapMutations} from 'vuex';
 export default {
-    props: ['data-position'],
     computed: {
         width() {
             return this.$store.state.width.wWidth;
@@ -36,14 +34,10 @@ export default {
     background-color: var(--topbar-background-color);
     border: 1px solid blue;
     padding: 0 2rem;
-    &__first {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        border: 1px solid blue;
+    &__rel {
+        width: 100%;
+        height: 100%;
+        position: relative;
     }
     &__userPanel {
         position: fixed;
