@@ -32,7 +32,6 @@ export default {
     top: 0;
     height: 6rem;
     background-color: var(--topbar-background-color);
-    border: 1px solid blue;
     padding: 0 2rem;
     &__rel {
         width: 100%;

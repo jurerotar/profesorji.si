@@ -92,5 +92,9 @@ export default {
       color: '#2D88FF',
       height: '5px',
       throttle: 200,
+  },
+  router: {
+    linkActiveClass: 'active',
+    linkExactActiveClass: '',
   }
 }

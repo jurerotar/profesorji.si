@@ -38,7 +38,6 @@ export default {
     z-index: 5;
     height: calc(100% - 6rem);
     background-color: var(--sidebar-background-color);
-    border: 1px solid blue;
     transition: transform var(--transition-duration-primary);
     @media screen and (max-width: 768px) {
         padding: 9rem 1rem 1rem 1rem;
