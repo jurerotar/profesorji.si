@@ -3,15 +3,22 @@
         <LogoSearch data-position = "onTop" />
         <TopbarLinks />
         <div class = "topbar__userPanel">
+            {{width}}
         </div>
+
     </nav>
 </template>
 
 
 <script>
-
+import {mapMutations} from 'vuex';
 export default {
-    props: ['data-position']
+    props: ['data-position'],
+    computed: {
+        width() {
+            return this.$store.state.width.wWidth;
+        }
+    }
 }
 </script>
 

@@ -34,9 +34,9 @@ export default {
       { name: 'theme-color', content: '#ffffff' },
     ],
     link: [
-      { rel: 'apple-touch-icon', type: 'image/png', sizes:"180x180", href: '/fav/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image/png', sizes:"32x32", href: '/fav/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes:"16x16", href: '/fav/favicon-16x16.png' },
+      { rel: 'apple-touch-icon', type: 'image/png', sizes: "180x180", href: '/fav/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/fav/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/fav/favicon-16x16.png' },
       { rel: 'manifest', href: '/fav/site.webmanifest' },
       { rel: 'shortcut icon', href: '/fav/favicon.ico' },
     ]
@@ -77,7 +77,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-     baseURL: 'http://localhost:8000'
+    baseURL: 'http://localhost:8000'
   },
   /*
   ** Build configuration
@@ -88,4 +88,9 @@ export default {
   styleResources: {
     scss: ['./assets/scss/*.scss']
   },
+  loading: {
+      color: '#2D88FF',
+      height: '5px',
+      throttle: 200,
+  }
 }
