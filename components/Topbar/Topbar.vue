@@ -1,9 +1,6 @@
 <template>
     <nav class = "topbar">
-        <div class = "topbar__first">
-            <TopbarLogo />
-            <TopbarSearch />
-        </div>
+        <LogoSearch data-position = "onTop" />
         <TopbarLinks />
         <div class = "topbar__userPanel">
         </div>
@@ -14,7 +11,7 @@
 <script>
 
 export default {
-
+    props: ['data-position']
 }
 </script>
 

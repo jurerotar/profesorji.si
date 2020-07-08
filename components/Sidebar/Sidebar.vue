@@ -1,5 +1,6 @@
 <template>
     <nav class = "sidebar">
+        <LogoSearch data-position = "onSide" />
         <BottomLinks />
     </nav>
 </template>
@@ -7,7 +8,7 @@
 
 <script>
 export default {
-
+    props : ['data-position']
 }
 </script>
 

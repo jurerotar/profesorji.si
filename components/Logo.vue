@@ -1,9 +1,9 @@
 <template>
-    <nuxt-link to = "/admin">
-        <div class = "logoContainer">
-            <span class = "logoContainer__logoTitle">p</span>
-        </div>
-    </nuxt-link>
+    <div class = "logoContainer">
+        <nuxt-link to = "/admin">
+                <span class = "logoContainer__logoTitle">p</span>
+        </nuxt-link>
+    </div>
 </template>
 
 <style lang = "scss">
