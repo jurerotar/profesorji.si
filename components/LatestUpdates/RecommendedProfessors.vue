@@ -27,7 +27,7 @@ export default {
                 {
                     name: 'Janez Novak',
                     sex: 'M',
-                    image: '',
+                    image: '1',
                     title: 'dr',
                     occupation: 'Redni profesor',
                     faculty: 'FE (UNI), UNI-LJ',
@@ -40,7 +40,7 @@ export default {
                 {
                     name: 'Janez Novak',
                     sex: 'M',
-                    image: '',
+                    image: '2',
                     title: 'dr',
                     occupation: 'Redni profesor',
                     faculty: 'FE (UNI), UNI-LJ',
@@ -94,6 +94,7 @@ export default {
         display: flex;
         flex-direction: column;
         margin-left: 1.5rem;
+        color: white;
     }
     &__name {
         font-size: 1.6rem;
