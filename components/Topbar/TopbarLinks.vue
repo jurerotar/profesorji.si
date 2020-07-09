@@ -82,7 +82,7 @@
     }
     &__logo {
         & path {
-            fill: var(--primary-color);
+            fill: var(--color-primary);
         }
     }
 }
