@@ -1,6 +1,7 @@
 <template>
     <div>
         <nav class = "sidebar" data-open = "closed">
+            <Navigation />
             <LogoSearch v-if = "width < 768" />
             <BottomLinks />
         </nav>
@@ -10,11 +11,13 @@
 
 
 <script>
+import {mapGetters} from 'vuex';
+
 export default {
     computed: {
-        width() {
-            return this.$store.state.width.wWidth;
-        }
+        ...mapGetters({
+            width: 'user/width'
+        }),
     },
     methods: {
         openOrClose: () => {

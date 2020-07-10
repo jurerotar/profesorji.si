@@ -67,18 +67,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
+    '@nuxtjs/apollo',
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
-    baseURL: 'http://localhost:8000'
-  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
@@ -96,5 +88,13 @@ export default {
   router: {
     linkActiveClass: 'active',
     linkExactActiveClass: '',
+  },
+  apollo:{
+    clientConfigs:{
+      default: {
+        httpEndpoint: 'http://localhost:8000/graphql/',
+        //wsEndpoint: 'ws://localhost:8000'
+      }
+    }
   }
 }

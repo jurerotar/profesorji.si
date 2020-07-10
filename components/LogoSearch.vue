@@ -9,12 +9,13 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 export default {
     computed: {
-        width() {
-            return this.$store.state.width.wWidth;
-        }
-    }
+        ...mapGetters({
+            width: 'user/width'
+        }),
+    },
 }
 </script>
 
