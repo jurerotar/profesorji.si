@@ -9,6 +9,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~/assets/scss/_variables.scss";
+
 .search {
     margin-left: 1rem;
     height: var(--search-bar-height);
@@ -22,7 +24,7 @@ export default {
     &::placeholder {
         color: var(--search-bar-color);
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $tablet) {
 		margin-left: 0;
         margin-top: .5rem;
         width: 100%;

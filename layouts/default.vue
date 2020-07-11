@@ -1,11 +1,9 @@
 <template>
-    <div>
+    <div class = "mainContainer">
         <Sidebar />
         <Topbar />
         <RecommendedProfessors />
-        <main>
-            <Nuxt />
-        </main>
+        <Nuxt />
     </div>
 </template>
 
@@ -13,26 +11,13 @@
 import {mapGetters} from 'vuex';
 
 export default {
-    data() {
-        return {
-            profileColors: [
-                '#001f3f',
-                '#7FDBFF',
-                '#39CCCC',
-                '#3D9970',
-                '#2ECC40',
-                '#01FF70',
-                '#FFDC00',
-                '#FF851B',
-                '#FF4136',
-                '#85144b',
-                '#F012BE',
-                '#B10DC9',
-                '#111111',
-                '#AAAAAA',
-                '#DDDDDD',
-            ],
-        }
+    computed: {
+        ...mapGetters({
+            anonymousUserTitle: 'constants/anonymousUserTitle',
+            username: 'user/username',
+            color: 'user/color',
+            profileColors: 'constants/profileColors'
+        })
     },
     mounted() {
         /**
@@ -47,19 +32,27 @@ export default {
          */
         this.updateWidth(window.innerWidth);
         this.updateHeight(window.innerHeight);
+
         this.setUsername();
         this.setColor();
         this.setAccessToken();
         this.setRefreshToken();
         this.setExpiresIn();
-    },
-    computed: {
-        ...mapGetters({
-            anonymousUserTitle: 'constants/anonymousUserTitle',
-            username: 'user/username',
-        })
+        this.updateLocalStorage({
+            color: this.color
+        });
     },
     methods: {
+        updateLocalStorage(object) {
+            function isSet(property) {
+                return !!localStorage.getItem(property);
+            }
+            for(const property in object) {
+                if(!isSet(property)) {
+                    localStorage.setItem(`${property}`, object[property]);
+                }
+            }
+        },
         updateWidth(width) {
             this.$store.commit('user/updateWidth', width);
         },
@@ -67,7 +60,7 @@ export default {
             this.$store.commit('user/updateHeight', height);
         },
         setUsername() {
-            this.$store.commit('user/setUsername', localStorage.getItem('username') || anonymousUserTitle);
+            this.$store.commit('user/setUsername', localStorage.getItem('username') || this.anonymousUserTitle);
         },
         setColor() {
             this.$store.commit('user/setColor', localStorage.getItem('color') || this.profileColors[Math.floor(Math.random() * Math.floor(this.profileColors.length))]);
@@ -86,4 +79,8 @@ export default {
 </script>
 
 <style lang="scss">
+.mainContainer {
+    display: flex;
+    justify-content: center;
+}
 </style>

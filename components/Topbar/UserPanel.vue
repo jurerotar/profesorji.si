@@ -1,6 +1,6 @@
 <template>
     <div class = "userPanel">
-        <div :style = "{backgroundColor: color}" class = "userPanel__letterImage"><span class = "userPanel__letter">{{}}</span></div>
+        <div :style = "{backgroundColor: color}" class = "userPanel__letterImage"><span class = "userPanel__letter">{{firstLetter}}</span></div>
         <span v-if="width > tabletWidth" class = "userPanel__username">{{username}}</span>
     </div>
 </template>
@@ -24,6 +24,8 @@ export default {
 
 
 <style lang="scss">
+@import "~/assets/scss/_variables.scss";
+
 .userPanel {
     display: flex;
     flex-direction: row;
@@ -32,7 +34,8 @@ export default {
     right: 0;
     height: 100%;
     align-items: center;
-    @media screen and (max-width: 768px) {
+    justify-content: center;
+    @media screen and (max-width: $tablet) {
         position: relative;
     }
     &__letterImage {

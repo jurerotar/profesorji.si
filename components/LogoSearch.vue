@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~/assets/scss/_variables.scss";
+
 .logoSearchContainer {
     display: flex;
     position: absolute;
@@ -31,8 +33,7 @@ export default {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: $tablet) {
             display: flex;
             width: 100%;
             flex-direction: column;
@@ -44,7 +45,7 @@ export default {
         color: var(--sidebar-link-color);
         font-size: 1.6rem;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $tablet) {
 		width: calc(100% - 2rem);
         left: 1rem;
 	}

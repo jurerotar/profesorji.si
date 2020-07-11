@@ -53,7 +53,7 @@ export const getters = {
         return state.username;
     },
     firstLetter(state) {
-        return state.username[0].toUpperCase();
+        return state.username.charAt(0).toUpperCase();
     },
     width(state) {
         return state.device.width;

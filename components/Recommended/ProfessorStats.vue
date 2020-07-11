@@ -30,6 +30,8 @@ export default {
 
 
 <style lang="scss">
+@import "~/assets/scss/_variables.scss";
+
 .professorStats {
     display: flex;
     flex-direction: row;

@@ -1,5 +1,5 @@
 @import "typography";
-
+@import "variables";
 
 *, *:after, *:before {
     margin: 0;
@@ -8,9 +8,10 @@
 }
 
 :root {
-    --small-mobile-width: 320px;
-    --mobile-width: 400px;
-    --tablet-width: 768px;
+    --small-mobile-width: $mobileSmall;
+    --mobile-width: $mobileWide;
+    --tablet-width: $tablet;
+    --wide-screen-width: $wideScreen;
     --body-background-color: #18191A;
     --sidebar-background-color: #18191A;
     --sidebar-link-color: #b0b3b8;

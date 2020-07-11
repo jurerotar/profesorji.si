@@ -37,6 +37,8 @@ export default {
 }
 </script>
 <style lang = "scss">
+@import "~/assets/scss/_variables.scss";
+
 .bottomLinks {
     display: flex;
     flex-wrap: wrap;

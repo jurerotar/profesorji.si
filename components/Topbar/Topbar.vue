@@ -1,8 +1,8 @@
 <template>
     <nav class = "topbar">
         <div class = "topbar__rel">
-            <SidebarExtender v-if = "width < tabletWidth"/>
-            <LogoSearch v-if = "width >= tabletWidth" />
+            <SidebarExtender v-if = "width <= tabletWidth"/>
+            <LogoSearch v-if = "width > tabletWidth" />
             <TopbarLinks />
             <UserPanel />
         </div>
@@ -24,6 +24,8 @@ export default {
 </script>
 
 <style lang = "scss">
+@import "~/assets/scss/_variables.scss";
+
 .topbar {
     display: flex;
     flex-direction: row;
@@ -44,7 +46,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: $tablet) {
             justify-content: space-between;
         }
     }

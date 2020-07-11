@@ -34,7 +34,7 @@ export default {
          * Removes clicked element and all following from state
          */
         removeFrom(e) {
-            this.$store.dispatch('removeFrom', e.currentTarget.innerHTML);
+            this.$store.dispatch('remove', e.currentTarget.innerHTML);
         }
     }
 }
@@ -42,6 +42,8 @@ export default {
 
 
 <style lang="scss">
+@import "~/assets/scss/_variables.scss";
+
 .breadcrumbs {
     display: flex;
     flex-direction: column;

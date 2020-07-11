@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <nav class = "sidebar" data-open = "closed">
-            <Navigation />
-            <LogoSearch v-if = "width < tabletWidth" />
-            <BottomLinks />
-        </nav>
-        <div v-if = "width < tabletWidth" class = "sidebarCloser" v-on:click="openOrClose"></div>
-    </div>
+  <div>
+    <nav class="sidebar" :data-open="sidebarExtended ? open : closed">
+        <LogoSearch v-if="width < tabletWidth" />
+        <Navigation />
+        <BottomLinks />
+    </nav>
+    <div v-if="width < tabletWidth" class="sidebarCloser" v-on:click="toggle"></div>
+  </div>
 </template>
 
 
@@ -14,16 +14,21 @@
 import {mapGetters} from 'vuex';
 
 export default {
+    data() {
+        return {
+            open: 'open',
+            closed: 'closed'
+        }
+    },
     computed: {
         ...mapGetters({
+            sidebarExtended: 'user/sidebarExtended',
             tabletWidth: 'constants/tablet',
             width: 'user/width'
         }),
     },
     methods: {
-        openOrClose: () => {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.setAttribute('data-open', sidebar.getAttribute('data-open') === 'open' ? 'closed' : 'open');
+        toggle() {
             this.$store.commit('user/toggleSidebar');
         }
     }
@@ -31,53 +36,52 @@ export default {
 </script>
 
 <style lang = "scss">
+@import "~/assets/scss/_variables.scss";
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    width: 25vw;
-    overflow-y: auto;
-    max-width: 320px;
-    position: fixed;
-    padding: 1rem 1rem 1rem 1rem;
-    left: 0;
-    top: 6rem;
-    z-index: 5;
-    height: calc(100% - 6rem);
-    background-color: var(--sidebar-background-color);
-    transition: transform var(--transition-duration-primary);
-    @media screen and (max-width: 768px) {
-        padding: 9rem 1rem 1rem 1rem;
-		width: 320px;
-        transform: translateX(-100%);
-        &[data-open="open"] {
-            transform: translateX(0);
-        }
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	width: 320px;
+	position: fixed;
+	padding: 1rem 1rem 1rem 1rem;
+	left: 0;
+	top: 6rem;
+	z-index: 5;
+	height: calc(100% - 6rem);
+	background-color: var(--sidebar-background-color);
+	transition: transform var(--transition-duration-primary);
+	@media screen and (max-width: $wideScreen) {
+		padding: 9rem 1rem 1rem 1rem;
+		transform: translateX(-100%);
+		&[data-open='open'] {
+			transform: translateX(0);
+		}
 	}
-    @media screen and (max-width: 400px) {
+	@media screen and (max-width: $mobileWide) {
 		width: 80%;
 	}
 }
 .sidebarCloser {
-    position: fixed;
-    top: 6rem;
-    right: 0;
-    height: calc(100% - 6rem);
-    z-index: 5;
-    filter: blur(.5px);
-    @media screen and (max-width: 768px) {
+	position: fixed;
+	top: 6rem;
+	right: 0;
+	height: calc(100% - 6rem);
+	z-index: 5;
+	filter: blur(0.5px);
+	@media screen and (max-width: $tablet) {
 		width: calc(100% - 320px);
-        transform: translateX(100%);
-        &[data-open="open"] {
-            transform: translateX(0);
-        }
+		transform: translateX(100%);
+		&[data-open='open'] {
+			transform: translateX(0);
+		}
 	}
-    @media screen and (max-width: 400px) {
+	@media screen and (max-width: $mobileWide) {
 		width: 20%;
 	}
 }
-.sidebar[data-open="open"] ~ .sidebarCloser {
-    @media screen and (max-width: 768px) {
-        transform: translateX(0);
-    }
+.sidebar[data-open='open'] ~ .sidebarCloser {
+	@media screen and (max-width: $tablet) {
+		transform: translateX(0);
+	}
 }
 </style>

@@ -147,11 +147,13 @@ export default {
 </script>
 
 <style lang = "scss">
+@import "~/assets/scss/_variables.scss";
+
 .recommendedProfessorsContainer {
     display: flex;
     flex-direction: column;
-    width: 25vw;
-    max-width: 320px;
+    width: 320px;
+    max-width: $mobileWide;
     position: fixed;
     right: 0;
     top: 6rem;
@@ -159,10 +161,9 @@ export default {
     padding: 1rem 1rem 0 1rem;
     background-color: var(--sidebar-background-color);
     overflow: auto;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $tablet) {
         position: relative;
         height: auto;
-        max-width: unset;
         width: 100%;
     }
     &::-webkit-scrollbar {
