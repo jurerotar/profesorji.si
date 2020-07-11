@@ -1,19 +1,13 @@
 export const state = () => ({
-    username: 'Anonimni uporabnik',
+    username: '',
     color: '',
-    selected : [
-    {
-        id: 1,
-        selection: 'UN LJ'
-    },
-    {
-        id: 2,
-        selection: 'FE'
-    }
-    ],
+    selected : [],
+    access_token : '',
+    remember_token : '',
+    expires_in: 0,
     device: {
-        width: 1000,
-        height: 1000
+        width: 0,
+        height: 0
     }
 });
 
@@ -29,6 +23,12 @@ export const mutations = {
             id: state.selected.length + 1,
             selection: element
         });
+    },
+    updateWidth(state, width) {
+        state.device.width = width;
+    },
+    updateHeight(state, height) {
+        state.device.height = height;
     }
 }
 
@@ -43,10 +43,22 @@ export const getters = {
     username(state) {
         return state.username;
     },
+    firstLetter(state) {
+        return state.username[0].toUpperCase();
+    },
     width(state) {
         return state.device.width;
     },
     height(state) {
         return state.device.height;
+    },
+    accessToken(state) {
+        return state.access_token;
+    },
+    rememberToken(state) {
+        return state.remember_token;
+    },
+    isAuthenticated(state) {
+        return !!state.access_token;
     }
 }

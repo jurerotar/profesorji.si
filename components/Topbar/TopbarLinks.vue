@@ -51,6 +51,9 @@
         height: 100%;
         width: 100%;
         transition: background-color var(--transition-duration-primary);
+        @media screen and (max-width: 768px) {
+            padding: .5rem 1rem;
+        }
         &::before {
             content: attr(data-title);
             color: black;
@@ -81,6 +84,11 @@
         }
     }
     &__logo {
+        @media screen and (max-width: 768px) {
+            --size: 3rem;
+            height: var(--size);
+            width: var(--size);
+        }
         & path {
             fill: var(--color-primary);
         }

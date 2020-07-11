@@ -1,6 +1,7 @@
 <template>
     <nav class = "topbar">
         <div class = "topbar_rel">
+            <SidebarExtender v-if = "width < 768"/>
             <LogoSearch v-if = "width >= 768" />
             <TopbarLinks />
             <div class = "topbar__userPanel">
@@ -18,7 +19,7 @@ export default {
         ...mapGetters({
             width: 'user/width'
         }),
-    },
+    }
 }
 </script>
 
@@ -33,6 +34,7 @@ export default {
     left: 0;
     top: 0;
     height: 6rem;
+    z-index: 10;
     background-color: var(--topbar-background-color);
     padding: 0 2rem;
     &__rel {

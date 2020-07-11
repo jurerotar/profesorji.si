@@ -77,9 +77,7 @@ export default {
   */
   build: {
   },
-  styleResources: {
-    scss: ['./assets/scss/*.scss']
-  },
+
   loading: {
       color: '#2D88FF',
       height: '5px',
