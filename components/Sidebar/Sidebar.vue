@@ -109,20 +109,13 @@ export default {
 	right: 0;
 	height: calc(100% - 6rem);
 	z-index: 5;
-	filter: blur(0.5px);
-	@media screen and (max-width: $tabletWidth) {
-		width: calc(100% - 320px);
-		transform: translateX(100%);
-		&[data-open='open'] {
-			transform: translateX(0);
-		}
-	}
+	width: calc(100% - 320px);
 	@media screen and (max-width: $mobileWideWidth) {
 		width: 20%;
 	}
 }
 .sidebar[data-open='open'] ~ .sidebarCloser {
-	@media screen and (max-width: $tabletWidth) {
+	@media screen and (max-width: $wideScreenWidth) {
 		transform: translateX(0);
 	}
 }

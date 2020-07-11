@@ -55,7 +55,7 @@ export default {
         color: var( --sidebar-link-color);
         font-size: 1.3rem;
         display: inline-flex;
-        margin: 3px 5px;
+        margin: 3px 10px 3px 0;
         font-weight: 600;
         transition: color var(--transition-duration-primary);
         position: relative;
@@ -70,7 +70,7 @@ export default {
             transform: translateY(-50%);
         }
         &.break {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             font-weight: 400;
             white-space: normal;
             &:hover {
