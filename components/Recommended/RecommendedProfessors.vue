@@ -153,7 +153,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 320px;
-    max-width: $mobileWide;
+    max-width: $mobileWideWidth;
     position: fixed;
     right: 0;
     top: 6rem;
@@ -161,7 +161,7 @@ export default {
     padding: 1rem 1rem 0 1rem;
     background-color: var(--sidebar-background-color);
     overflow: auto;
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $tabletWidth) {
         position: relative;
         height: auto;
         width: 100%;

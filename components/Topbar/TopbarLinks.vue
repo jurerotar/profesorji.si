@@ -53,7 +53,7 @@
         height: 100%;
         width: 100%;
         transition: background-color var(--transition-duration-primary);
-        @media screen and (max-width: $tablet) {
+        @media screen and (max-width: $tabletWidth) {
             padding: .5rem 1rem;
         }
         &::before {
@@ -86,7 +86,7 @@
         }
     }
     &__logo {
-        @media screen and (max-width: $tablet) {
+        @media screen and (max-width: $tabletWidth) {
             --size: 3rem;
             height: var(--size);
             width: var(--size);

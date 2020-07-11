@@ -1,11 +1,11 @@
 <template>
   <div>
     <nav class="sidebar" :data-open="sidebarExtended ? open : closed">
-        <LogoSearch v-if="width < tabletWidth" />
+        <LogoSearch v-if="width < wideScreenWidth" />
         <Navigation />
         <BottomLinks />
     </nav>
-    <div v-if="width < tabletWidth" class="sidebarCloser" v-on:click="toggle"></div>
+    <div v-if="width < wideScreenWidth" class="sidebarCloser" v-on:click="toggle"></div>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
     computed: {
         ...mapGetters({
             sidebarExtended: 'user/sidebarExtended',
-            tabletWidth: 'constants/tablet',
+            wideScreenWidth: 'constants/wideScreenWidth',
             width: 'user/width'
         }),
     },
@@ -50,14 +50,14 @@ export default {
 	height: calc(100% - 6rem);
 	background-color: var(--sidebar-background-color);
 	transition: transform var(--transition-duration-primary);
-	@media screen and (max-width: $wideScreen) {
+	@media screen and (max-width: $wideScreenWidth) {
 		padding: 9rem 1rem 1rem 1rem;
 		transform: translateX(-100%);
 		&[data-open='open'] {
 			transform: translateX(0);
 		}
 	}
-	@media screen and (max-width: $mobileWide) {
+	@media screen and (max-width: $mobileWideWidth) {
 		width: 80%;
 	}
 }
@@ -68,19 +68,19 @@ export default {
 	height: calc(100% - 6rem);
 	z-index: 5;
 	filter: blur(0.5px);
-	@media screen and (max-width: $tablet) {
+	@media screen and (max-width: $tabletWidth) {
 		width: calc(100% - 320px);
 		transform: translateX(100%);
 		&[data-open='open'] {
 			transform: translateX(0);
 		}
 	}
-	@media screen and (max-width: $mobileWide) {
+	@media screen and (max-width: $mobileWideWidth) {
 		width: 20%;
 	}
 }
 .sidebar[data-open='open'] ~ .sidebarCloser {
-	@media screen and (max-width: $tablet) {
+	@media screen and (max-width: $tabletWidth) {
 		transform: translateX(0);
 	}
 }

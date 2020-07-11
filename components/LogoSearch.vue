@@ -33,7 +33,7 @@ export default {
         display: flex;
         flex-direction: row;
         align-items: center;
-        @media screen and (max-width: $tablet) {
+        @media screen and (max-width: $tabletWidth) {
             display: flex;
             width: 100%;
             flex-direction: column;
@@ -45,7 +45,7 @@ export default {
         color: var(--sidebar-link-color);
         font-size: 1.6rem;
     }
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $tabletWidth) {
 		width: calc(100% - 2rem);
         left: 1rem;
 	}

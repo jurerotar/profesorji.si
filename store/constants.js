@@ -1,7 +1,8 @@
 export const state = () => ({
     widescreenWidth: 1000,
     tabletWidth: 768,
-    mobileWidth: 400,
+    mobileWideWidth: 400,
+    mobileSmallWidth: 320,
     anonymousUserTitle: 'Anonimni uporabnik',
     profileColors: [
         '#001f3f',

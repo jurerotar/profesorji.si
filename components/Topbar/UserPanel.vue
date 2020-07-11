@@ -35,7 +35,7 @@ export default {
     height: 100%;
     align-items: center;
     justify-content: center;
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $tabletWidth) {
         position: relative;
     }
     &__letterImage {

@@ -1,8 +1,8 @@
 <template>
     <nav class = "topbar">
         <div class = "topbar__rel">
-            <SidebarExtender v-if = "width <= tabletWidth"/>
-            <LogoSearch v-if = "width > tabletWidth" />
+            <SidebarExtender v-if = "width <= wideScreenWidth"/>
+            <LogoSearch v-if = "width > wideScreenWidth" />
             <TopbarLinks />
             <UserPanel />
         </div>
@@ -16,7 +16,7 @@ import {mapGetters} from 'vuex';
 export default {
     computed: {
         ...mapGetters({
-            tabletWidth: 'constants/tablet',
+            wideScreenWidth: 'constants/wideScreenWidth',
             width: 'user/width'
         }),
     }
@@ -46,7 +46,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        @media screen and (max-width: $tablet) {
+        @media screen and (max-width: $wideScreenWidth) {
             justify-content: space-between;
         }
     }

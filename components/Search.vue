@@ -24,7 +24,7 @@ export default {
     &::placeholder {
         color: var(--search-bar-color);
     }
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $tabletWidth) {
 		margin-left: 0;
         margin-top: .5rem;
         width: 100%;
