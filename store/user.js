@@ -3,7 +3,7 @@ export const state = () => ({
     color: '',
     selected : [],
     access_token : '',
-    remember_token : '',
+    refresh_token : '',
     expires_in: 0,
     device: {
         width: 0,
@@ -64,8 +64,8 @@ export const getters = {
     accessToken(state) {
         return state.access_token;
     },
-    rememberToken(state) {
-        return state.remember_token;
+    refreshToken(state) {
+        return state.refresh_token;
     },
     isAuthenticated(state) {
         return !!state.access_token;

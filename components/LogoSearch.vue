@@ -33,7 +33,7 @@ export default {
         display: flex;
         flex-direction: row;
         align-items: center;
-        @media screen and (max-width: $tabletWidth) {
+        @media screen and (max-width: $mobileWideWidth) {
             display: flex;
             width: 100%;
             flex-direction: column;

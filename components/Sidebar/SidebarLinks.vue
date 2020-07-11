@@ -22,18 +22,25 @@
             <nuxt-link to = "/kontakt" class = "bottomLinks__link">Kontakt</nuxt-link>
         </li>
         <li class="bottomLinks__item">
-            <p class = "bottomLinks__link break">Vsebino strani prispevajo uporabniki in ni nujno delo avtorjev strani. Avtorji strani za objave ne odgovarjajo. <br>Vse pravice pridržane, profesorji.si © {{currentYear}}</p>
+            <p class = "bottomLinks__link break">Vsebino strani prispevajo uporabniki in ni nujno delo avtorjev strani. Avtorji strani za objave ne odgovarjajo. <br>Vse pravice pridržane, {{appName}} © {{currentYear}}</p>
         </li>
     </ul>
 
 </template>
 <script>
+import {mapGetters} from 'vuex';
+
 export default {
     data() {
         return {
             currentYear: new Date().getFullYear()
         }
-    }
+    },
+    computed: {
+        ...mapGetters({
+            appName: 'constants/name'
+        }),
+    },
 }
 </script>
 <style lang = "scss">

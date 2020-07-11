@@ -2,7 +2,10 @@
     <nav class = "topbar">
         <div class = "topbar__rel">
             <SidebarExtender v-if = "width <= wideScreenWidth"/>
-            <LogoSearch v-if = "width > wideScreenWidth" />
+            <div class = "topbar__logoSearch" v-else >
+                <Logo />
+                <Search />
+            </div>
             <TopbarLinks />
             <UserPanel />
         </div>
@@ -16,7 +19,7 @@ import {mapGetters} from 'vuex';
 export default {
     computed: {
         ...mapGetters({
-            wideScreenWidth: 'constants/wideScreenWidth',
+            wideScreenWidth: 'constants/wideScreen',
             width: 'user/width'
         }),
     }
@@ -49,6 +52,16 @@ export default {
         @media screen and (max-width: $wideScreenWidth) {
             justify-content: space-between;
         }
+    }
+    &__logoSearch {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
     }
 }
 </style>

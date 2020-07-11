@@ -1,7 +1,12 @@
 <template>
     <div class = "userPanel">
-        <div :style = "{backgroundColor: color}" class = "userPanel__letterImage"><span class = "userPanel__letter">{{firstLetter}}</span></div>
-        <span v-if="width > tabletWidth" class = "userPanel__username">{{username}}</span>
+        <div v-if = "isAuthenticated" class = "userPanel__loggedIn">
+            <div :style = "{backgroundColor: color}" class = "userPanel__letterImage"><span class = "userPanel__letter">{{firstLetter}}</span></div>
+            <span v-if="width > tabletWidth" class = "userPanel__username">{{username}}</span>
+        </div>
+        <div v-else class = "userPanel__login">
+            <LoginButton :class = "'loginButton--topbar'"/>
+        </div>
     </div>
 </template>
 
@@ -17,6 +22,7 @@ export default {
             firstLetter: 'user/firstLetter',
             tabletWidth: 'constants/tablet',
             width: 'user/width',
+            isAuthenticated: 'user/isAuthenticated'
         }),
     },
 }
@@ -33,10 +39,20 @@ export default {
     top: 0;
     right: 0;
     height: 100%;
-    align-items: center;
-    justify-content: center;
-    @media screen and (max-width: $tabletWidth) {
+    @media screen and (max-width: $wideScreenWidth) {
         position: relative;
+    }
+    &__loggedIn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    &__login {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
     &__letterImage {
         --size: 4rem;

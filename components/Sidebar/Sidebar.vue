@@ -1,9 +1,20 @@
 <template>
   <div>
     <nav class="sidebar" :data-open="sidebarExtended ? open : closed">
-        <LogoSearch v-if="width < wideScreenWidth" />
+        <div class = "sidebar__logoSearch" v-if="width < wideScreenWidth">
+			<Logo v-if = "width > mobileWideWidth" />
+			<Search />
+		</div>
+		<div v-if = "isAuthenticated" class = "sidebar__userPreferences">
+
+		</div>
+		<div v-else class = "sidebar__login">
+			<h3 class = "sidebar__loginTitle">Prijava</h3>
+			<p class = "sidebar__loginText">Prijavljeni uporabniki imajo možnost komentiranja, podajanja ocen, všečkanja komentarjev, nagrajevanje uporabnikov in mnogo več!</p>
+			<LoginButton :class = "'loginButton--sidebar'" />
+		</div>
         <Navigation />
-        <BottomLinks />
+        <SidebarLinks />
     </nav>
     <div v-if="width < wideScreenWidth" class="sidebarCloser" v-on:click="toggle"></div>
   </div>
@@ -23,15 +34,18 @@ export default {
     computed: {
         ...mapGetters({
             sidebarExtended: 'user/sidebarExtended',
-            wideScreenWidth: 'constants/wideScreenWidth',
-            width: 'user/width'
+            wideScreenWidth: 'constants/wideScreen',
+			mobileWideWidth: 'constants/mobileWide',
+            width: 'user/width',
+			isAuthenticated: 'user/isAuthenticated'
         }),
     },
     methods: {
         toggle() {
             this.$store.commit('user/toggleSidebar');
         }
-    }
+    },
+	props: ['loginButton--sidebar']
 }
 </script>
 
@@ -51,7 +65,6 @@ export default {
 	background-color: var(--sidebar-background-color);
 	transition: transform var(--transition-duration-primary);
 	@media screen and (max-width: $wideScreenWidth) {
-		padding: 9rem 1rem 1rem 1rem;
 		transform: translateX(-100%);
 		&[data-open='open'] {
 			transform: translateX(0);
@@ -59,6 +72,35 @@ export default {
 	}
 	@media screen and (max-width: $mobileWideWidth) {
 		width: 80%;
+	}
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: var(--color-primary);
+	}
+	&__logoSearch {
+		display: flex;
+		flex-direction: row;
+	}
+	&__login {
+		border-bottom: 1px solid #ccc;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 1.5rem;
+        @media screen and (max-width: $tabletWidth) {
+            margin: 1.5rem 0;
+        }
+	}
+	&__loginText {
+		color: white;
+		font-size: 1.4rem;
+	}
+	&__loginTitle {
+		font-size: 2rem;
+		width: 100%;
+		color: white;
 	}
 }
 .sidebarCloser {

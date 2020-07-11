@@ -1,5 +1,6 @@
 export const state = () => ({
-    widescreenWidth: 1000,
+    appName: 'profesorji.si',
+    wideScreenWidth: 1000,
     tabletWidth: 768,
     mobileWideWidth: 400,
     mobileSmallWidth: 320,
@@ -26,19 +27,25 @@ export const state = () => ({
 
 export const getters = {
     wideScreen(state) {
-        return state.widescreenWidth;
+        return state.wideScreenWidth;
     },
     tablet(state) {
         return state.tabletWidth
     },
-    mobile(state) {
+    mobileWide(state) {
         return state.mobileWidth;
+    },
+    mobileSmall(state) {
+        return state.mobileSmallWidth;
     },
     anonymousUserTitle(state) {
         return state.anonymousUserTitle;
     },
     profileColors(state) {
         return state.profileColors;
+    },
+    name(state) {
+        return state.appName;
     }
 }
 

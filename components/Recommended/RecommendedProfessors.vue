@@ -1,6 +1,6 @@
 <template>
     <nav class = "recommendedProfessorsContainer">
-        <h3 class = "recommendedProfessorsContainer__header">Predlagano za vas</h3>
+        <h3 class = "recommendedProfessorsContainer__header">Predlagano zate</h3>
         <nuxt-link class = "recommendedProfessorsContainer__link" v-for="professor in professors" :key="professor.id" :to = "professor.url">
             <div class = "recommendedProfessorsContainer__professorCard">
                 <div class = "recommendedProfessorsContainer__imageContainer">
