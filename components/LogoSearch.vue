@@ -1,8 +1,8 @@
 <template>
     <div class = "logoSearchContainer">
         <div class = "logoSearchContainer__searchAndTitleContainer">
-            <span v-if = "width < 768" class = "logoSearchContainer__title">Iskanje</span>
-            <Logo v-if = "width >= 768" />
+            <span v-if = "width < tabletWidth" class = "logoSearchContainer__title">Iskanje</span>
+            <Logo v-if = "width >= tabletWidth" />
             <Search />
         </div>
     </div>
@@ -13,6 +13,7 @@ import {mapGetters} from 'vuex';
 export default {
     computed: {
         ...mapGetters({
+            tabletWidth: 'constants/tablet',
             width: 'user/width'
         }),
     },
@@ -23,8 +24,9 @@ export default {
 .logoSearchContainer {
     display: flex;
     position: absolute;
-    top: .5rem;
-    left: 2rem;
+    top: 0;
+    left: 0;
+    height: 100%;
     &__searchAndTitleContainer {
         display: flex;
         flex-direction: row;

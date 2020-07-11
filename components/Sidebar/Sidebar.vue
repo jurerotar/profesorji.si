@@ -2,10 +2,10 @@
     <div>
         <nav class = "sidebar" data-open = "closed">
             <Navigation />
-            <LogoSearch v-if = "width < 768" />
+            <LogoSearch v-if = "width < tabletWidth" />
             <BottomLinks />
         </nav>
-        <div v-if = "width < 768" class = "sidebarCloser" v-on:click="openOrClose"></div>
+        <div v-if = "width < tabletWidth" class = "sidebarCloser" v-on:click="openOrClose"></div>
     </div>
 </template>
 
@@ -16,6 +16,7 @@ import {mapGetters} from 'vuex';
 export default {
     computed: {
         ...mapGetters({
+            tabletWidth: 'constants/tablet',
             width: 'user/width'
         }),
     },
@@ -23,6 +24,7 @@ export default {
         openOrClose: () => {
             const sidebar = document.querySelector('.sidebar');
             sidebar.setAttribute('data-open', sidebar.getAttribute('data-open') === 'open' ? 'closed' : 'open');
+            this.$store.commit('user/toggleSidebar');
         }
     }
 }

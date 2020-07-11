@@ -13,7 +13,7 @@
 
 
 <script>
-import {mapGetters} from 'vuex';
+import {mapGetters, mapActions} from 'vuex';
 export default {
     computed: {
         ...mapGetters({
@@ -21,6 +21,9 @@ export default {
         }),
     },
     methods: {
+        ...mapActions([
+            'remove'
+        ]),
         /**
          * Set 'active' class on the last element
          */
@@ -31,8 +34,7 @@ export default {
          * Removes clicked element and all following from state
          */
         removeFrom(e) {
-            this.$forceUpdate();
-            this.$store.commit('user/remove', e.currentTarget.innerHTML);
+            this.$store.dispatch('removeFrom', e.currentTarget.innerHTML);
         }
     }
 }

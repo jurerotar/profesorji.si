@@ -1,11 +1,10 @@
 <template>
     <nav class = "topbar">
-        <div class = "topbar_rel">
-            <SidebarExtender v-if = "width < 768"/>
-            <LogoSearch v-if = "width >= 768" />
+        <div class = "topbar__rel">
+            <SidebarExtender v-if = "width < tabletWidth"/>
+            <LogoSearch v-if = "width >= tabletWidth" />
             <TopbarLinks />
-            <div class = "topbar__userPanel">
-            </div>
+            <UserPanel />
         </div>
     </nav>
 </template>
@@ -17,6 +16,7 @@ import {mapGetters} from 'vuex';
 export default {
     computed: {
         ...mapGetters({
+            tabletWidth: 'constants/tablet',
             width: 'user/width'
         }),
     }
@@ -41,12 +41,12 @@ export default {
         width: 100%;
         height: 100%;
         position: relative;
-    }
-    &__userPanel {
-        position: fixed;
-        top: 0;
-        right: 0;
-        border: 1px solid blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: 768px) {
+            justify-content: space-between;
+        }
     }
 }
 </style>
