@@ -24,5 +24,13 @@
 		width: 100%;
         margin-left: unset;
 	}
+    /**
+    Used in singleline layout
+     */
+    &.singleLine {
+        @media screen and (max-width: $wideScreenWidth) {
+            margin: var(--topbar-height) auto 0 auto;
+	    }
+    }
 }
 </style>

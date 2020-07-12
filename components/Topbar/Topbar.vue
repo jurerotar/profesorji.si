@@ -57,5 +57,13 @@ export default {
         left: 0;
         height: 100%;
     }
+    /**
+    Used in singleline layout
+     */
+    &.singleLine .topbar__rel {
+        @media screen and (max-width: $wideScreenWidth) {
+            justify-content: center;
+	    }
+    }
 }
 </style>

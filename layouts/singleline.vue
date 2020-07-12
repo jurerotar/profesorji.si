@@ -1,13 +1,11 @@
 <template>
     <div class = "mainContainer">
-        <Topbar>
-            <SidebarExtender/>
-            <div class = "topbar__logoSearch">
-                <Logo />
-            </div>
+        <Topbar :class = "'singleLine'">
+            <BackButton />
             <TopbarLinks />
+            <UserPanel />
         </Topbar>
-        <Main>
+        <Main :class = "'singleLine'">
             <Nuxt />
         </Main>
     </div>
