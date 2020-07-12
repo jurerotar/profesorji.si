@@ -17,7 +17,7 @@
             <SidebarLinks />
         </Sidebar>
         <Topbar>
-            <SidebarExtender v-if = "width <= wideScreenWidth"/>
+            <SidebarExtender v-if = "width < wideScreenWidth"/>
             <div v-else class = "topbar__logoSearch">
                 <Logo />
                 <Search />
@@ -108,8 +108,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~/assets/scss/_variables.scss";
+
 .mainContainer {
     display: flex;
     justify-content: center;
+    @media screen and (max-width: $wideScreenWidth) {
+		justify-content: flex-start;
+	}
+    @media screen and (max-width: $tabletWidth) {
+		justify-content: center;
+	}
 }
 </style>

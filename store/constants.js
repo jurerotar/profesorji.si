@@ -1,6 +1,8 @@
 export const state = () => ({
     appName: 'profesorji.si',
-    wideScreenWidth: 1000,
+    mainSectionWidth: 400,
+    sidebarWidth: 320,
+    wideScreenWidth: 1040, // 2x sidebar + main
     tabletWidth: 768,
     mobileWideWidth: 400,
     mobileSmallWidth: 320,

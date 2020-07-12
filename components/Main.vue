@@ -6,12 +6,24 @@
 
 
 <style lang="scss">
+@import "~/assets/scss/_variables.scss";
+
 .main {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: var(--main-width);
     width: 100%;
     margin-top: var(--topbar-height);
     padding: 1rem;
+    align-items: center;
+    @media screen and (max-width: $wideScreenWidth) {
+        --width: calc(100% - var(--sidebar-width));
+		width: var(--width);
+        margin-left: calc((100% - var(--sidebar-width) - var(--main-width)) / 2);
+	}
+    @media screen and (max-width: $tabletWidth) {
+		width: 100%;
+        margin-left: unset;
+	}
 }
 </style>

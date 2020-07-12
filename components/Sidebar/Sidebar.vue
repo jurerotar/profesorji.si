@@ -41,7 +41,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	overflow-y: auto;
-	width: var(--sidebar-width);
+	width: calc(var(--sidebar-width) - 1rem);
 	position: fixed;
 	padding: 1rem;
 	left: 0;
@@ -61,6 +61,7 @@ export default {
 	}
 	&::-webkit-scrollbar {
 		width: 5px;
+		border-right: 1px solid #ccc;
 	}
 	&::-webkit-scrollbar-thumb {
 		background: var(--color-primary);
