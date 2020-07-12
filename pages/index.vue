@@ -1,5 +1,5 @@
 <template>
-
+    <p>burek index</p>
 </template>
 
 <script>

@@ -93,49 +93,6 @@ export default {
                     grade: 4.9,
                     url: '',
                 },
-                                {
-                    id: 6,
-                    name: 'Jana Novak',
-                    sex: 'F',
-                    image: '3',
-                    title: 'dr',
-                    occupation: 'asistent',
-                    faculty: 'FE (UNI), UNI-LJ',
-                    class: 'Polprevodniška elektronika',
-                    numberOfComments: 10,
-                    numberOfGrades: 50,
-                    grade: 4.9,
-                    url: '',
-                },
-                                {
-                    id: 7,
-                    name: 'Jana Novak',
-                    sex: 'F',
-                    image: '2',
-                    title: 'dr',
-                    occupation: 'asistent',
-                    faculty: 'FE (UNI), UNI-LJ',
-                    class: 'Polprevodniška elektronika',
-                    numberOfComments: 10,
-                    numberOfGrades: 50,
-                    grade: 4.9,
-                    url: '',
-                },
-                                {
-                    id: 8,
-                    name: 'Jana Novak',
-                    sex: 'F',
-                    image: '2',
-                    title: 'dr',
-                    occupation: 'asistent',
-                    faculty: 'FE (UNI), UNI-LJ',
-                    class: 'Polprevodniška elektronika',
-                    numberOfComments: 10,
-                    numberOfGrades: 50,
-                    grade: 4.9,
-                    url: '',
-                },
-
             ]
         }
     },
@@ -152,12 +109,12 @@ export default {
 .recommendedProfessorsContainer {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: var(--sidebar-width);
     max-width: $mobileWideWidth;
     position: fixed;
     right: 0;
-    top: 6rem;
-    height: calc(100% - 6rem);
+    top: var(--topbar-height);
+    height: calc(100% - var(--topbar-height));
     padding: 1rem 1rem 0 1rem;
     background-color: var(--sidebar-background-color);
     overflow: auto;
@@ -165,6 +122,7 @@ export default {
         position: relative;
         height: auto;
         width: 100%;
+        padding: 1rem 0;
     }
     &::-webkit-scrollbar {
         width: 5px;

@@ -1,20 +1,7 @@
 <template>
   <div>
     <nav class="sidebar" :data-open="sidebarExtended ? open : closed">
-        <div class = "sidebar__logoSearch" v-if="width < wideScreenWidth">
-			<Logo v-if = "width > mobileWideWidth" />
-			<Search />
-		</div>
-		<div v-if = "isAuthenticated" class = "sidebar__userPreferences">
-
-		</div>
-		<div v-else class = "sidebar__login">
-			<h3 class = "sidebar__loginTitle">Prijava</h3>
-			<p class = "sidebar__loginText">Prijavljeni uporabniki imajo možnost komentiranja, podajanja ocen, všečkanja komentarjev, nagrajevanje uporabnikov in mnogo več!</p>
-			<LoginButton :class = "'loginButton--sidebar'" />
-		</div>
-        <Navigation />
-        <SidebarLinks />
+		<slot />
     </nav>
     <div v-if="width < wideScreenWidth" class="sidebarCloser" v-on:click="toggle"></div>
   </div>
@@ -45,7 +32,6 @@ export default {
             this.$store.commit('user/toggleSidebar');
         }
     },
-	props: ['loginButton--sidebar']
 }
 </script>
 
@@ -55,13 +41,13 @@ export default {
 	display: flex;
 	flex-direction: column;
 	overflow-y: auto;
-	width: 320px;
+	width: var(--sidebar-width);
 	position: fixed;
-	padding: 1rem 1rem 1rem 1rem;
+	padding: 1rem;
 	left: 0;
-	top: 6rem;
+	top: var(--topbar-height);
 	z-index: 5;
-	height: calc(100% - 6rem);
+	height: calc(100% - var(--topbar-height));
 	background-color: var(--sidebar-background-color);
 	transition: transform var(--transition-duration-primary);
 	@media screen and (max-width: $wideScreenWidth) {
@@ -105,11 +91,11 @@ export default {
 }
 .sidebarCloser {
 	position: fixed;
-	top: 6rem;
+	top: var(--topbar-height);
 	right: 0;
-	height: calc(100% - 6rem);
+	height: calc(100% - var(--topbar-height));
 	z-index: 5;
-	width: calc(100% - 320px);
+	width: calc(100% - var(--sidebar-width));
 	@media screen and (max-width: $mobileWideWidth) {
 		width: 20%;
 	}

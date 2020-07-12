@@ -1,13 +1,7 @@
 <template>
     <nav class = "topbar">
         <div class = "topbar__rel">
-            <SidebarExtender v-if = "width <= wideScreenWidth"/>
-            <div class = "topbar__logoSearch" v-else >
-                <Logo />
-                <Search />
-            </div>
-            <TopbarLinks />
-            <UserPanel />
+            <slot />
         </div>
     </nav>
 </template>

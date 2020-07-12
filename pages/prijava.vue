@@ -1,12 +1,6 @@
-<template>
-    <Main>
-        <p>Burek</p>
-    </Main>
-</template>
-
 <script>
 export default {
-    layout: 'admin'
+    layout: 'default'
 }
 </script>
 
