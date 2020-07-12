@@ -16,9 +16,8 @@
     margin-top: var(--topbar-height);
     padding: 1rem;
     align-items: center;
+    border: 1px solid blue;
     @media screen and (max-width: $wideScreenWidth) {
-        --width: calc(100% - var(--sidebar-width));
-		width: var(--width);
         margin-left: calc((100% - var(--sidebar-width) - var(--main-width)) / 2);
 	}
     @media screen and (max-width: $tabletWidth) {

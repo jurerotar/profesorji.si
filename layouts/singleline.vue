@@ -1,37 +1,17 @@
 <template>
     <div class = "mainContainer">
-        <Sidebar>
-            <div class = "sidebar__logoSearch" v-if="width < wideScreenWidth">
-                <Logo v-if = "width > mobileWideWidth" />
-                <Search />
-            </div>
-            <div v-if = "isAuthenticated" class = "sidebar__userPreferences">
-
-            </div>
-            <div v-else class = "sidebar__login">
-                <h3 class = "sidebar__loginTitle">Prijava</h3>
-                <p class = "sidebar__loginText">Prijavljeni uporabniki imajo možnost komentiranja, podajanja ocen, všečkanja komentarjev, nagrajevanje uporabnikov in mnogo več!</p>
-                <LoginButton :class = "'loginButton--sidebar'" />
-            </div>
-            <Navigation />
-            <SidebarLinks />
-        </Sidebar>
         <Topbar>
-            <SidebarExtender v-if = "width < wideScreenWidth"/>
-            <div v-else class = "topbar__logoSearch">
+            <SidebarExtender/>
+            <div class = "topbar__logoSearch">
                 <Logo />
-                <Search />
             </div>
             <TopbarLinks />
-            <UserPanel />
         </Topbar>
         <Main>
             <Nuxt />
-            <RecommendedProfessors />
         </Main>
     </div>
 </template>
-
 <script>
 import {mapGetters} from 'vuex';
 
@@ -106,7 +86,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss">
-
-</style>

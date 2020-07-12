@@ -73,3 +73,21 @@ a {
 ul {
     list-style-type: none;
 }
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: $wideScreenWidth) {
+		justify-content: flex-start;
+	}
+    @media screen and (max-width: $tabletWidth) {
+		justify-content: center;
+	}
+}
+.page-enter-active, .page-leave-active {
+    transition: all .30s ease-out;
+}
+.page-enter, .page-leave-active {
+    opacity: 0;
+    transform-origin: 50% 50%;
+}
