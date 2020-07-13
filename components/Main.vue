@@ -13,10 +13,9 @@
     flex-direction: column;
     max-width: var(--main-width);
     width: 100%;
-    margin-top: var(--topbar-height);
+    margin-top: calc(var(--topbar-height) + 1rem);
     padding: 1rem;
-    align-items: center;
-    border: 1px solid blue;
+    justify-content: center;
     @media screen and (max-width: $wideScreenWidth) {
         margin-left: calc((100% - var(--sidebar-width) - var(--main-width)) / 2);
 	}

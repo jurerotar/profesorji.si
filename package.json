@@ -17,6 +17,7 @@
     "vue": "^2.6.11",
     "vue-server-renderer": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
+    "vuelidate": "^0.7.5",
     "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {

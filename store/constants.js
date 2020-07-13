@@ -24,6 +24,10 @@ export const state = () => ({
         '#AAAAAA',
         '#DDDDDD',
     ],
+    text: {
+        login: 'Prijavi se v svoj račun',
+        register: 'Registriraj nov račun'
+    }
 });
 
 
@@ -48,6 +52,9 @@ export const getters = {
     },
     name(state) {
         return state.appName;
+    },
+    text(state) {
+        return state.text;
     }
 }
 

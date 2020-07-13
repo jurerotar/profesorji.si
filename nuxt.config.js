@@ -52,6 +52,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+      '~/plugins/functions.client.js',
+      '~/plugins/vuelidate'
   ],
   /*
   ** Auto import components

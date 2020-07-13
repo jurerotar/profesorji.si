@@ -1,5 +1,7 @@
 export const state = () => ({
     username: '',
+    email: '',
+    password: '',
     color: '',
     selected : [],
     access_token : '',
@@ -26,6 +28,12 @@ export const mutations = {
     setUsername(state, username) {
         state.username = username;
     },
+    setEmail(state, email) {
+        state.email = email;
+    },
+    setPassword(state, password) {
+        state.password = password;
+    },
     setColor(state, color) {
         state.color = color;
     },
@@ -51,6 +59,12 @@ export const getters = {
     },
     username(state) {
         return state.username;
+    },
+    email(state) {
+        return state.email;
+    },
+    password(state) {
+        return state.password;
     },
     firstLetter(state) {
         return state.username.charAt(0).toUpperCase();

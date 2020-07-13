@@ -17,7 +17,7 @@
             <SidebarLinks />
         </Sidebar>
         <Topbar>
-            <SidebarExtender v-if = "width < wideScreenWidth"/>
+            <SidebarExtender v-if = "width <= wideScreenWidth"/>
             <div v-else class = "topbar__logoSearch">
                 <Logo />
                 <Search />
@@ -67,21 +67,11 @@ export default {
         this.setAccessToken();
         this.setRefreshToken();
         this.setExpiresIn();
-        this.updateLocalStorage({
+        this.$updateLocalStorage({
             color: this.color
         });
     },
     methods: {
-        updateLocalStorage(object) {
-            function isSet(property) {
-                return !!localStorage.getItem(property);
-            }
-            for(const property in object) {
-                if(!isSet(property)) {
-                    localStorage.setItem(`${property}`, object[property]);
-                }
-            }
-        },
         updateWidth(width) {
             this.$store.commit('user/updateWidth', width);
         },

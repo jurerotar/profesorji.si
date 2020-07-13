@@ -37,6 +37,7 @@ export default {
     }
     @media screen and (max-width: $tabletWidth) {
         padding: .5rem 1rem;
+        position: relative;
     }
     &__icon {
         & path {
